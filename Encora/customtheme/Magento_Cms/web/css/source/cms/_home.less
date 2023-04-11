@@ -1,0 +1,281 @@
+// /**
+//  * Copyright © Encora ApS, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .home-banner {
+        position: relative;
+
+        .get-in-now-buttons {
+            position: absolute;
+
+            .pagebuilder-button-primary {
+                .lib-css(background, @color-orange-red1);
+                border: 1px solid @color-orange-red1;
+            }
+        }
+    }
+    .slick-slider{
+        .slick-slide .pagebuilder-slide-wrapper {
+          min-height: 500px !important;
+        }
+
+        .slick-dots {
+          position: absolute;
+          bottom: 15px;
+          li.slick-active button{
+            background-color: @color-orange-red1;
+            border: 1px solid @color-orange-red1;
+          }
+        }
+        .pagebuilder-poster-content{
+            h5{
+                font-size: 16px;
+                font-weight: @font-weight__heavier;
+                max-width: 41%;
+                line-height: normal;
+            }
+
+            a {
+              display: block;
+              background: #fa9a4c;
+              width: 80px;
+              color: @color-white;
+              font-size: 16px;
+              text-align: center;
+              padding: 8px;
+              font-weight: @font-weight__heavier;
+              margin-top: 30px;
+            }
+        }
+
+        .slick-next{
+            right: -60px;
+        }
+
+        .slick-prev {
+          left: -60px;
+        }
+
+        .pagebuilder-overlay.pagebuilder-poster-overlay {
+            min-height: 500px !important;
+            background-size: @fullwidth !important;
+        }
+    }
+
+    .feature-container {
+        margin-top: 40px;
+
+        .heading {
+            position: relative;
+            &::before {
+                content: "";
+                  height: 2px;
+                  width: @fullwidth;
+                  content: "";
+                  background: #ccc;
+                  display: block;
+            }
+            h2 {
+                color: @color-orange-red1;
+                font-weight: bold;
+                text-align: center;
+                position: relative;
+                width: 250px;
+                z-index: 99;
+                background: @color-white;
+                top: -15px;
+                margin: 0 auto;
+                text-transform: uppercase;
+                font-size: 22px;
+            }
+        }
+
+        .left-category-container{
+            padding: 0 25px 0 0;
+            box-sizing: border-box;
+            
+            .heading {
+                h2 {
+                    width: 140px;
+                }
+            }
+
+            .navigation {
+                background-color: @color-white;
+                border: 1px solid @color-gray94;
+                margin-top: 10px;
+                padding: 10px;
+              
+                .level0{
+                    width: @fullwidth;
+                
+                    > .level-top{
+                        color: #7a7976;
+                        line-height: 35px;
+                        width: 100%;
+                        font-weight: @font-weight__heavier;
+                        box-sizing: border-box;
+                       
+                        &::after{
+                            opacity: 0;
+                        }
+
+                        > .ui-menu-icon::after{
+                            background: @sprite-icon-image no-repeat;
+                            content:"";
+                            width: 20px;
+                            height: 20px;
+                            display: inline-block;
+                            background-position: 0px -155px;
+                            position: absolute;
+                            right: 5px;
+                            top: 13px;
+                        }
+                    }
+
+                    .submenu{
+                        position: unset !important;
+                        border: 0px;
+                    }
+                }
+            }       
+        }
+
+        .category-container{
+            ul {
+                .product-item{
+                    border: 1px solid @color-gray94;
+                    text-align: center;
+                    margin: 10px;
+                    list-style: none;
+
+                    .price {
+                      font-size: 23px;
+                      font-weight: 700;
+                      color: @color-orange-red1;
+                    }
+
+                    .product-name {
+                      color: @theme-color-text;
+                      margin-bottom: 10px;
+                    }
+
+                    .add-to-cart {
+                        background: @theme-bg-color;
+                        border-color: @theme-bg-color;
+                        border-radius: 0px;
+                        color: @theme-color-text;
+                        margin-bottom: 20px;
+                        
+                        &::before{
+                            background: @sprite-icon-image no-repeat;
+                            content:"";
+                            width: 20px;
+                            height: 20px;
+                            display: inline-block;
+                            background-position: -178px -107px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// Ipad
+// ______________________________________________
+ 
+@media only screen and (min-width: @screen__m) {
+    .left-category-container {
+        float: left;
+        width: 25%;
+    }
+
+    .category-container {
+        ul{
+            display: flex;             
+            
+            .product-item{
+                flex: 30%;
+            }
+        }
+    }
+
+    .home-banner {
+        .get-in-now-buttons {
+            bottom: 145px;
+            left: 32px;
+        }
+    }
+}
+
+//
+// Mobile
+// _____________________________________________
+
+@media only screen and (max-width: @screen__m) {
+    .slick-slider{
+        .slick-slide .pagebuilder-slide-wrapper {
+            background-size: @fullwidth !important;
+            min-height: 300px !important;
+        }
+
+        .pagebuilder-poster-content {
+            h5 {
+                max-width: @fullwidth / 2;
+                font-size: 13px;
+            }
+        }
+
+        .slick-next {
+            right: -26px;
+        }
+
+        .slick-prev {
+            left: -26px;
+        }
+
+        .pagebuilder-overlay.pagebuilder-poster-overlay {
+             min-height: 300px !important;
+        }
+
+        #html-body [data-appearance="full-bleed"] {
+            min-height: auto !important;
+        }
+    }
+
+    .home-banner {
+        .get-in-now-buttons {
+            bottom: 45px;
+            left: 35%;
+        }
+    }
+
+    .feature-container {
+        .left-category-container {
+            float: none;
+            width: @fullwidth;
+            padding: 0px;   
+        }
+
+        .category-container {
+            margin-top: 50px;
+
+            ul {
+                flex-wrap: wrap;
+                padding: 0;
+                
+                .product-item {
+                    flex: 45%;
+                }
+            }
+        }
+    }
+}

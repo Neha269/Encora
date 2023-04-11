@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Encora, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+ <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="header-top-links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">top-links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="top.links">
+           <block class="Magento\Framework\View\Element\Html\Link" name="checkout-link" after="-">
+              <arguments>
+                  <argument name="path" xsi:type="string">checkout</argument>
+                  <argument name="class" xsi:type="string">checkout-link</argument>
+                  <argument name="label" xsi:type="string" translate="true">Checkout</argument>
+              </arguments>
+          </block>
+        </referenceContainer>
+        <move element="store_switcher" destination="header-wrapper" after="logo" />
+        <move element="top.links" destination="header-wrapper" before="minicart"/>
+        <move element="authorization-link" destination="header-wrapper" after="minicart"/>
+        <referenceBlock name="header.links" remove="true"/>
+    </body>     
+</page>
+
+
+
+
+
